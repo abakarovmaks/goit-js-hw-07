@@ -96,4 +96,29 @@ a:focus {
 
 #validation-input.invalid {
   border-color: #f44336;
-}.
+}
+
+/* 3 задача (галерея) */
+#gallery {
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  background-color: gray;
+}
+
+.gallery-list {
+  list-style: none;
+}
+
+.gallery-list:not(:last-child) {
+  margin-right: 20px;
+}
+
+.gallery-item {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  background-size: cover;
+}

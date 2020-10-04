@@ -19,7 +19,7 @@ const images = [
 const galleryItem = document.querySelector("#gallery");
 const makeGalleryItem = (options) => {
   const { url, alt } = options;
-  return `<li><img src='${url}'alt='${alt}'class='gallery-item'></li> `;
+  return `<li class='gallery-list'><img src='${url}'alt='${alt}'class='gallery-item'></li> `;
 };
 const makeGalleryItems = images.map(makeGalleryItem).join("");
-galleryItem.insertAdjacentHTML("beforebegin", makeGalleryItems);
+galleryItem.insertAdjacentHTML("afterbegin", makeGalleryItems);
