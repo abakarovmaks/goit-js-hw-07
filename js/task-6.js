@@ -1,43 +1,18 @@
-/*
- * Создём и добавляем коллекцию
- */
-const colorPickerOptions = [
-  { label: 'red', color: '#F44336' },
-  { label: 'green', color: '#4CAF50' },
-  { label: 'blue', color: '#2196F3' },
-  { label: 'grey', color: '#607D8B' },
-  { label: 'pink', color: '#E91E63' },
-  { label: 'indigo', color: '#3F51B5' },
-];
+const validationInput = document.querySelector("#validation-input");
+console.log("validationInput", validationInput);
 
-const colorPickerContainerEl = document.querySelector('.js-color-picker');
-
-// const elements = colorPickerOptions.map(option => {
-//   const buttonEl = document.createElement('button');
-//   buttonEl.type = 'button';
-//   buttonEl.classList.add('color-picker__option');
-//   buttonEl.textContent = option.label;
-//   buttonEl.style.backgroundColor = option.color;
-
-//   return buttonEl;
-// });
-
-// console.log(elements);
-
-/*
- * Пишем функцию для создания разметки колорпикера
- */
-const makeColorPickerOptions = options => {
-  return options.map(option => {
-    const buttonEl = document.createElement('button');
-    buttonEl.type = 'button';
-    buttonEl.classList.add('color-picker__option');
-    buttonEl.textContent = option.label;
-    buttonEl.style.backgroundColor = option.color;
-
-    return buttonEl;
-  });
+const validationInputLength = function () {
+  if (
+    validationInput.value.length < Number(validationInput.dataset.length) ||
+    validationInput.value.length > Number(validationInput.dataset.length)
+  ) {
+    validationInput.classList.add("invalid");
+  } else {
+    validationInput.classList.add("valid");
+  }
 };
 
-const elements = makeColorPickerOptions(colorPickerOptions);
-colorPickerContainerEl.append(...elements);
+validationInput.addEventListener("focus", () => {
+  validationInput.classList = "";
+});
+validationInput.addEventListener("blur", validationInputLength);
