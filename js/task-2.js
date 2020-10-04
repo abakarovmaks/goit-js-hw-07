@@ -12,8 +12,6 @@ const ingredientsList = ingredients.map(function (ingredient) {
   createList.textContent = ingredient;
   return createList;
 });
-console.log(ingredientsList);
 
 const elList = document.querySelector("ul");
 elList.append(...ingredientsList);
-console.log(elList);
