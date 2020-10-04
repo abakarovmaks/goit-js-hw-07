@@ -1,5 +1,4 @@
 const validationInput = document.querySelector("#validation-input");
-console.log("validationInput", validationInput);
 
 const validationInputLength = function () {
   if (
