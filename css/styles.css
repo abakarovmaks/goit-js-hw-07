@@ -105,10 +105,12 @@ a:focus {
   display: flex;
   align-items: center;
   background-color: gray;
+  outline: 4px solid orange;
 }
 
 .gallery-list {
   list-style: none;
+  outline: 1px solid orange;
 }
 
 .gallery-list:not(:last-child) {

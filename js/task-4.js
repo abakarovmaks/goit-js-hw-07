@@ -13,11 +13,9 @@ const incrementBtn = document.querySelector("[data-action='increment']");
 
 decrementBtn.addEventListener("click", function () {
   counter.decrement();
-  console.log(counter);
   counterValue.textContent = counter.value;
 });
 incrementBtn.addEventListener("click", function () {
   counter.increment();
-  console.log(counter);
   counterValue.textContent = counter.value;
 });
