@@ -15,5 +15,5 @@ const ingredientsList = ingredients.map(function (ingredient) {
 console.log(ingredientsList);
 
 const elList = document.createElement("ul");
-elList.append(ingredientsList);
+elList.append(...ingredientsList);
 console.log(elList);
