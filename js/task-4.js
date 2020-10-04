@@ -1,12 +1,24 @@
-/*
- * Свойства «навигации» по DOM-узлам (взять список)
- * http://fecore.net.ua/books/m5ph3r-javascript/module-07/dom-traversal.html
- */
+const counterValue = document.querySelector("#value");
+const decrementBtn = document.querySelector("[data-action='decrement']");
+const incrementBtn = document.querySelector("[data-action='increment']");
 
-const navEl = document.querySelector('.site-nav');
+const counter = {
+  value: 0,
+  increment() {
+    this.value += 1;
+  },
+  decrement() {
+    this.value -= 1;
+  },
+};
 
-// const firstNavItemEl = navEl.querySelector('.site-nav__item');
-// console.log('firstNavItemEl', firstNavItemEl);
-const firstNavItemEl = navEl.firstElementChild;
-console.log('firstNavItemEl', firstNavItemEl);
-console.log('children', navEl.children[2]);
+decrementBtn.addEventListener("click", function () {
+  counter.decrement();
+  console.log(counter);
+  counterValue.textContent = counter.value;
+});
+incrementBtn.addEventListener("click", function () {
+  counter.increment();
+  console.log(counter);
+  counterValue.textContent = counter.value;
+});
